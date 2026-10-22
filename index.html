@@ -16,7 +16,8 @@
       background: #fffdf5;
       font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
       user-select: none;
-      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
 
     h1 {
@@ -120,6 +121,33 @@
       0%   { opacity: 1; transform: translateY(0) rotate(0deg); }
       100% { opacity: 0; transform: translateY(-140px) rotate(18deg); }
     }
+    /*访问计数器*/
+    .visitor-counter {
+      margin: 32px 0 24px;
+      padding: 12px;
+      text-align: center;
+      font-size: 14px;
+      color:#999;
+      flex-shrink: 0;
+    }
+    .visitor-counter img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 8px auto 0;
+    }
+    .go-link {
+      margin-top: 16px;
+      font-size:18px;
+    }
+    .go-link a {
+      color:#f5a623;
+      text-decoration:none;
+      font-weight:bold;
+    }
+    .go-link a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -136,6 +164,15 @@
   <button id="btn">开笑！</button>
 
   <audio id="laugh" src="assets/laugh.mp3" preload="auto"></audio>
+  <footer class="visitor-counter">
+    <p>访问计数器！</p>
+    <img src="https://count.moeyy.cn/@nannan-site?name=nannan-site&theme=rule34&padding=7&offset=0&align=top&scale=1.5&pixelated=1&darkmode=auto&num=1"
+      alt="moe-counter"
+      loading="lazy">
+    <p class="go-link">
+      <a href="https://go.xn--vcs43c0gz4eg5e5r0l.com">前往go.帝国奶龙大学.com</a>
+    </p>
+  </footer>
 
   <script>
     const dragon = document.getElementById("nailong");
@@ -186,5 +223,6 @@
     btn.addEventListener("click", toggle);
     laugh.addEventListener("ended", () => { if (laughing) startLaugh(); });
   </script>
+
 </body>
 </html>
